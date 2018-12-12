@@ -15,7 +15,7 @@ if [[ ! -f "$SOLR_DATA/solr.cfg" ]]; then
     echo "SOLR_LOGS_DIR=$SOLR_LOG" >> "$CONFIG"
 
     echo "ZK_HOST=$ZK_HOSTS" >> "$CONFIG"
-    echo "ZK_HOST=192.168.173.2" >> "$CONFIG"
+#    echo "ZK_HOST=192.168.173.2" >> "$CONFIG"
 
     echo "SOLR_HOST=$SOLR_HOST" >> "$CONFIG"
 
