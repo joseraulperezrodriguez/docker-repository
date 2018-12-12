@@ -12,6 +12,10 @@ if [[ ! -f "$ZK_CONF_DIR/zoo.cfg" ]]; then
     echo "dataDir=$ZK_DATA_DIR" >> "$CONFIG"
     echo "dataLogDir=$ZK_DATA_LOG_DIR" >> "$CONFIG"
 
+    for server in $ZK_SERVERS; do
+        echo "$server" >> "$CONFIG"
+    done
+
 fi
 
 exec "$@"

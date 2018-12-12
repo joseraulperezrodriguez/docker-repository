@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+ zookeeper1:
+  image: zookeeper:basic
+  hostname: zookeeper1
+  ports:
+   - 2181:2181
+  environment:
+   ZK_SERVERS: server.1=0.0.0.0:2888:3888
+  networks:
+   - docker-local
+
+ solr1:
+  image: solr-cloud:basic
+  hostname: solr1
+  ports:
+   - 8983:8983
+  environment:
+   ZK_HOSTS: zookeeper1
+   SOLR_HOST: solr1
+  networks:
+   - docker-local	
+
+networks:
+ docker-local:
