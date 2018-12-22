@@ -23,13 +23,6 @@ if [[ ! -f "$SOLR_DATA/solr.cfg" ]]; then
 
 fi
 
-#exec echo "end"
-
 service solr start
 
 while true; do sleep 1000; done
-
-#tail -500f /docker/launch-solr.sh
-
-#exec "$@"
-# service solr status
