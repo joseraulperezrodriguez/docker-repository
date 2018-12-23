@@ -32,12 +32,6 @@ RUN ["chmod", "+x", "bin/install_solr_service.sh"]
 RUN mkdir "$DCK_BASE/installation"
 RUN bash "bin/install_solr_service.sh" "/$SOLR_NAME.tgz" -n -i "$DCK_BASE/installation" -d "$SOLR_DATA" -u "$SOLR_USER" -s "$SOLR_SERVICE" -p "$SOLR_PORT"
 
-#RUN echo "SOLR_PID_DIR=$SOLR_DATA" >> "$SOLR_INCLUDE"
-#RUN echo "SOLR_HOME=$SOLR_DATA/data" >> "$SOLR_INCLUDE"
-
-#RUN echo "LOG4J_PROPS=$SOLR_DATA/log4j2.xml" >> "$SOLR_INCLUDE"
-#RUN echo "SOLR_LOGS_DIR=$SOLR_LOG" >> "$SOLR_INCLUDE"
-
 VOLUME ["$SOLR_DATA"]
 
 EXPOSE "$SOLR_PORT"
